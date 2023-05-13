@@ -1,0 +1,2 @@
+# plato
+Clean Jekyll search
