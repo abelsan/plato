@@ -1,6 +1,10 @@
 ---
 layout: base
 ---
+  {% for tag in page.tags %}
+      {{tag}} | 
+  {% endfor %}
+
 
 <h2>{{page.title}}</h2>
 
