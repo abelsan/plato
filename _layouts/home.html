@@ -89,8 +89,7 @@ layout: base
 
 
 <h3>Tags: retrieve all tags into an list by using site.tags </h3>
-{% capture site_tags %}{% for tag in site.tags %}{{ tag | first }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
-{% assign tags_list = site_tags | split:',' | sort_natural %}
+{{ page.tags | array_to_sentence_string }} 
 
 <h3>get a link for each Tag with its post count correspondingly</h3>
 <ul>
