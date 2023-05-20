@@ -96,8 +96,9 @@ layout: base
   </div>
   <hr/>
 
-  <h3>Step 01</h3>
+  
   <div>
+    <h3>Step 01</h3>
     {% capture site_tags %}
       {% for tag in site.tags %}
         {{ tag | first }}{% unless forloop.last %},{% endunless %}
@@ -105,6 +106,7 @@ layout: base
     {% endcapture %}
     {% assign tags_list = site_tags | split:',' | sort_natural %}
 
+    <h3>Step 02</h3>
     <ul>
       {% for item in (0..site.tags.size) %}{% unless forloop.last %}
         {% capture this_word %}{{ tags_list[item] | strip_newlines }}{% endcapture %}
@@ -112,6 +114,7 @@ layout: base
       {% endunless %}{% endfor %}
     </ul>
     
+    <h3>Step 03</h3>
     {% for item in (0..site.tags.size) %}{% unless forloop.last %}
     {% capture this_word %}{{ tags_list[item] | strip_newlines }}{% endcapture %}
       <article id="{{ this_word }}">
@@ -123,7 +126,7 @@ layout: base
           </ul>
       </article>
     {% endunless %}{% endfor %}    
-    
+
   </div>
 
 </div>
