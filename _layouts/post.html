@@ -4,11 +4,12 @@ layout: base
 
 {{ content }}
 
+Previous post:
 {% if page.previous.url %}
-  <a href="{{page.previous.url}}"> Previous post link {{page.previous.title}} </a>
-{% endif %}
-
-
+  <a href="{{page.previous.url}}"> link {{page.previous.title}} </a>
+{% endif %} 
+  
+Next post:
 {% if page.next.url %}
-    <a href="{{page.next.url}}">Next post link {{page.next.title}}</a>
-{% endif %}
+    <a href="{{page.next.url}}">link {{page.next.title}}</a>
+{% endif %} 
