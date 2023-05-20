@@ -91,6 +91,12 @@ layout: base
 <h3>Tags: retrieve all tags into an list by using site.tags </h3>
 {{ page.tags | array_to_sentence_string }} 
 
+<ul>
+  {% for tag in page.tags %}
+      <li> {{tag}} </li>
+  {% endfor %}
+</ul>
+
 <h3>get a link for each Tag with its post count correspondingly</h3>
 <ul>
   {% for item in (0..site.tags.size) %}{% unless forloop.last %}
