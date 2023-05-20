@@ -25,8 +25,8 @@ layout: base
   <div>docs: {{ collection.docs }}</div>
   <div>files: {{ collection.files }}</div>
   <div>relative_directory: {{ collection.relative_directory }}</div>
-  <div>docs: {{ collection.directory }}</div>
-  <div>docs: {{ collection.output }}</div>    
+  <div>directory: {{ collection.directory }}</div>
+  <div>output: {{ collection.output }}</div>    
   <ul>
     {% for item in site[collection.label] %}
       <li><a href="{{ item.url }}">{{ item.title }}</a></li>
