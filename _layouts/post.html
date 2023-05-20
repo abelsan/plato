@@ -1,0 +1,13 @@
+---
+layout: base
+---
+
+{{ content }}
+
+{% if page.previous.url %}
+<a href="{{page.previous.url}}">
+  <span class="unsighted">Previous post:</span>
+  <span aria-hidden="true">&laquo;</span>
+  {{page.previous.title}}
+</a>
+{% endif %}
