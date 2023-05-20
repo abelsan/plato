@@ -87,15 +87,3 @@ layout: base
 </ul>
 {% endfor %}
 
-
-<h3>Tags: retrieve all tags into an list by using site.tags </h3>
-{{ page.tags | array_to_sentence_string }} 
-
-
-<h3>get a link for each Tag with its post count correspondingly</h3>
-<ul>
-  {% for item in (0..site.tags.size) %}{% unless forloop.last %}
-    {% capture this_word %}{{ tags_list[item] | strip_newlines }}{% endcapture %}
-    <li><a href="#{{ this_word}}" class="tag"><span class="tag-name">{{ this_word }}</span> <span class="count">{{ site.tags[this_word].size }}</span></a></li>
-  {% endunless %}{% endfor %}
-</ul>
