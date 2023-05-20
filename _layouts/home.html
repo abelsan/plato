@@ -32,4 +32,11 @@ layout: base
       <li><a href="{{ item.url }}">{{ item.title }}</a></li>
     {% endfor %}
   </ul>
+
+  <h3>Limit list length</h3>
+  <ul>
+    {% for item in site[collection.label] limit:2 %}
+      <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+    {% endfor %}
+  </ul>  
 {% endfor %}
