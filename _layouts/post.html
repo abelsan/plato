@@ -10,12 +10,11 @@ layout: base
 
 {{ content }}
 
-Previous post:
+
 {% if page.previous.url %}
-  <a href="{{page.previous.url}}"> link {{page.previous.title}}</a>
+  Previous post: <a href="{{page.previous.url}}"> link {{page.previous.title}}</a>
 {% endif %} 
  |   
-Next post:
 {% if page.next.url %}
-    <a href="{{page.next.url}}">link {{page.next.title}}</a>
+  Next post: <a href="{{page.next.url}}">link {{page.next.title}}</a>
 {% endif %} 
