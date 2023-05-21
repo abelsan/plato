@@ -8,5 +8,5 @@ layout: home
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  
 
 
-[List of blog posts and tags](blogs_and_tags.html).
-[Blog](blog).
+Link to [list of blog posts and tags](blogs_and_tags.html).
+Link to [blog](blog).
