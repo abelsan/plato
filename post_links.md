@@ -1,14 +1,14 @@
 ---
-layout: home
+layout: base
 ---
 
-<h3>Page contains ways to include posts on a page</h3>
+<h3>Page explores ways to include posts on a page</h3>
 
   {% for collection in site.collections %}
   <h2>Items from {{ collection.label }}</h2>
   Inspect the variables:
-  <div>docs: {{ collection.docs }}</div>
-  <div>files: {{ collection.files }}</div>
+  <!-- <div>docs: {{ collection.docs }}</div> -->
+  <!-- <div>files: {{ collection.files }}</div> -->
   <div>relative_directory: {{ collection.relative_directory }}</div>
   <div>directory: {{ collection.directory }}</div>
   <div>output: {{ collection.output }}</div>    
@@ -25,6 +25,7 @@ layout: home
     {% endfor %}
   </ul>  
 {% endfor %}
+
 
 <h3>Quick Test</h3>
 <ul>
