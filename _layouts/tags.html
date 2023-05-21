@@ -46,7 +46,7 @@ layout: base
 {% for tag in site.tags %}
     {% assign t = tag | first %}
     {% assign posts = tag | last %}
-        {{t | downcase | replace:" ","-" }} has {{ posts | size }} posts
+        {{t | downcase | replace:" ","-" }} has {{ posts | size }} posts, 
 {% endfor %}
 <br><br class="py-3">
 
