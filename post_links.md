@@ -1,5 +1,5 @@
 ---
-layout: base
+layout: tags
 ---
 ## Page explores ways to include posts on a page
 

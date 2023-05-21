@@ -4,24 +4,22 @@ layout: base
 {{ content }}
 
 {% for collection in site.collections %}
-    ### Items from {{ collection.label }}
+    <h3>Items from {{ collection.label }}</h3>
     
-    #### Inspect the variables:
-    relative_directory: {{ collection.relative_directory }}
-    directory: {{ collection.directory }}
-    output: {{ collection.output }}
+    <h4>Inspect the variables:</h4>
+    relative_directory: {{ collection.relative_directory }}<br>
+    directory: {{ collection.directory }}<br>
+    output: {{ collection.output }}<br>
 
-    #### Loop through the labels (titles):
+    <h4>Loop through the labels (titles):</h4>
     {% for item in site[collection.label] %}
-        * <a href="{{ item.url }}">{{ item.title }}</a>
+         - <a href="{{ item.url }}">{{ item.title }}</a> <br>
     {% endfor %}
 
-    #### Limit the list length:
-    <ul>
-        {% for item in site[collection.label] limit:2 %}
-         * <a href="{{ item.url }}">{{ item.title }}</a>
-        {% endfor %}
-    </ul>  
+    <h4>Limit the list length:</h4>
+    {% for item in site[collection.label] limit:2 %}
+         - <a href="{{ item.url }}">{{ item.title }}</a> <br>
+    {% endfor %}
 {% endfor %}
 
 
