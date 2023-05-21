@@ -69,6 +69,6 @@ layout: base
 
 <h3>Tags - Horizontal</h3>
 {% for tag in site.tags %}
-    * <a href="#{{ tag[0] | slugify }}" class="post-tag">{{ tag[0] }}</a> <br>
+    <a href="#{{ tag[0] | slugify }}" class="post-tag">{{ tag[0] }}</a> | 
 {% endfor %}
 <br class="py-3">
