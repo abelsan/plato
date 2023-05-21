@@ -7,8 +7,6 @@ layout: base
   {% for collection in site.collections %}
   <h2>Items from {{ collection.label }}</h2>
   Inspect the variables:
-  <!-- <div>docs: {{ collection.docs }}</div> -->
-  <!-- <div>files: {{ collection.files }}</div> -->
   <div>relative_directory: {{ collection.relative_directory }}</div>
   <div>directory: {{ collection.directory }}</div>
   <div>output: {{ collection.output }}</div>    
