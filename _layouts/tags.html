@@ -48,7 +48,7 @@ layout: base
     {% assign posts = tag | last %}
         {{t | downcase | replace:" ","-" }} has {{ posts | size }} posts
 {% endfor %}
-<br class="py-3">
+<br><br class="py-3">
 
 <h3>List of tags - alternate code</h3>
 {% for tag in site.tags %}
@@ -56,7 +56,7 @@ layout: base
     {% assign posts = tag | last %}
     {{ t | downcase }}
 
-    <h4>List of tags - alternate code</h4>
+    <!-- posts -->
     {% for post in posts %}
     {% if post.tags contains t %}
         <a href="{{ post.url }}">{{ post.title }}</a>
