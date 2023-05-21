@@ -9,24 +9,28 @@ layout: base
     <h4>Inspect the variables:</h4>
     relative_directory: {{ collection.relative_directory }}<br>
     directory: {{ collection.directory }}<br>
-    output: {{ collection.output }}<br>
+    output: {{ collection.output }} 
+    <br class="py-3">
 
     <h4>Loop through the labels (titles):</h4>
     {% for item in site[collection.label] %}
          - <a href="{{ item.url }}">{{ item.title }}</a> <br>
     {% endfor %}
+    <br class="py-3">
 
     <h4>Limit the list length:</h4>
     {% for item in site[collection.label] limit:2 %}
          - <a href="{{ item.url }}">{{ item.title }}</a> <br>
     {% endfor %}
+    <br class="py-3">
 {% endfor %}
 
 
-### Quick code to get list of posts
+<h3>Quick code to get list of posts</h3>
 {% for post in site.posts %}
-    * <a href="{{ post.url }}">{{ post.title }}</a>
+    * <a href="{{ post.url }}">{{ post.title }}</a> <br>
 {% endfor %}
+<br class="py-3">
 
 
 ### List of tags plus the posts for that tag
