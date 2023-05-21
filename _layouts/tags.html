@@ -35,11 +35,10 @@ layout: base
 
 <h3>List of tags plus the posts for that tag</h3>
 {% for tag in site.tags %}
-  {{ tag[0] }}
+  {{ tag[0] }} <br>
     {% for post in tag[1] %}
       * <a href="{{ post.url }}">{{ post.title }}</a> <br>
     {% endfor %}
-    <br>
 {% endfor %}
 <br class="py-3">
 
