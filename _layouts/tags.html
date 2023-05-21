@@ -4,12 +4,12 @@ layout: base
 {{ content }}
 
 {% for collection in site.collections %}
-    <h3>Items from {{ collection.label }}</h3>
+    <h3 class="py-3">Items from {{ collection.label }}</h3>
     
     <h4>Inspect the variables:</h4>
     relative_directory: {{ collection.relative_directory }}<br>
     directory: {{ collection.directory }}<br>
-    output: {{ collection.output }} 
+    output: {{ collection.output }}<br>
     <br class="py-3">
 
     <h4>Loop through the labels (titles):</h4>
@@ -33,23 +33,24 @@ layout: base
 <br class="py-3">
 
 
-### List of tags plus the posts for that tag
+<h3>List of tags plus the posts for that tag</h3>
 {% for tag in site.tags %}
   {{ tag[0] }}
     {% for post in tag[1] %}
-      * <a href="{{ post.url }}">{{ post.title }}</a>
+      * <a href="{{ post.url }}">{{ post.title }}</a> <br>
     {% endfor %}
 {% endfor %}
+<br class="py-3">
 
-### Post count per tag
+<h3>Post count per tag</h3>
 {% for tag in site.tags %}
     {% assign t = tag | first %}
     {% assign posts = tag | last %}
         {{t | downcase | replace:" ","-" }} has {{ posts | size }} posts
 {% endfor %}
+<br class="py-3">
 
-
-### List of tags - alternate code
+<h3>List of tags - alternate code</h3>
 {% for tag in site.tags %}
     {% assign t = tag | first %}
     {% assign posts = tag | last %}
@@ -59,12 +60,14 @@ layout: base
     {% for post in posts %}
     {% if post.tags contains t %}
         <a href="{{ post.url }}">{{ post.title }}</a>
-        <span class="date">{{ post.date | date: "%B %-d, %Y"  }}</span>
+        <span class="date">{{ post.date | date: "%B %-d, %Y"  }}</span> <br>
     {% endif %}
     {% endfor %}
 {% endfor %}
+<br class="py-3">
 
-### Tags - Horizontal
+<h3>Tags - Horizontal</h3>
 {% for tag in site.tags %}
-    * <a href="#{{ tag[0] | slugify }}" class="post-tag">{{ tag[0] }}</a>
+    * <a href="#{{ tag[0] | slugify }}" class="post-tag">{{ tag[0] }}</a> <br>
 {% endfor %}
+<br class="py-3">
