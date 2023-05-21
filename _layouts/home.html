@@ -2,22 +2,11 @@
 layout: base
 ---
 
-<h2>Home Layout</h2>
+<h2>Home Layout Using H2</h2>
 
 {{ content }}
 
 <h3>Inspect</h3>
-<ul class="entries">
-    {% for post in paginator.posts %}
-    <li>
-      <a href="{{ post.url }}">
-      <h3>{{ post.title }}</h3>
-      <p class="blogdate">{{ post.date | date: "%d %B %Y" }}</p>
-      <div>{{ post.content |truncatehtml | truncatewords: 60 }}</div>
-      </a>
-    </li>
-    {% endfor %}
-  </ul>
 
   {% for collection in site.collections %}
   <h2>Items from {{ collection.label }}</h2>
