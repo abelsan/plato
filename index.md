@@ -4,6 +4,9 @@
 layout: home
 ---
 
-### Landing Page - see index.md in code
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+### Landing Page - for code see index.md
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  
 
+
+[List of blog posts and tags](blogs_and_tags.html).
+[Blog](blog).
