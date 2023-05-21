@@ -1,0 +1,117 @@
+---
+layout: home
+---
+
+<h3>Page contains ways to include posts on a page</h3>
+
+  {% for collection in site.collections %}
+  <h2>Items from {{ collection.label }}</h2>
+  Inspect the variables:
+  <div>docs: {{ collection.docs }}</div>
+  <div>files: {{ collection.files }}</div>
+  <div>relative_directory: {{ collection.relative_directory }}</div>
+  <div>directory: {{ collection.directory }}</div>
+  <div>output: {{ collection.output }}</div>    
+  <ul>
+    {% for item in site[collection.label] %}
+      <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+    {% endfor %}
+  </ul>
+
+  <h3>Limit list length</h3>
+  <ul>
+    {% for item in site[collection.label] limit:2 %}
+      <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+    {% endfor %}
+  </ul>  
+{% endfor %}
+
+<h3>Quick Test</h3>
+<ul>
+  {% for post in site.posts %}
+    <li>
+      <a href="{{ post.url }}">{{ post.title }}</a>
+    </li>
+  {% endfor %}
+</ul>
+
+<h3>Tags Test</h3>
+{% for tag in site.tags %}
+  <h3>{{ tag[0] }}</h3>
+  <ul>
+    {% for post in tag[1] %}
+      <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor %}
+  </ul>
+{% endfor %}
+
+<h3>Listing all Tags</h3>
+<ul class="tags">
+  {% for tag in site.tags %}
+    {% assign t = tag | first %}
+    {% assign posts = tag | last %}
+    <li>{{t | downcase | replace:" ","-" }} has {{ posts | size }} posts</li>
+  {% endfor %}
+ </ul>
+
+<h3>Listing all Tags and the posts containing that Tag</h3>
+ {% for tag in site.tags %}
+  {% assign t = tag | first %}
+  {% assign posts = tag | last %}
+
+{{ t | downcase }}
+<ul>
+{% for post in posts %}
+  {% if post.tags contains t %}
+  <li>
+    <a href="{{ post.url }}">{{ post.title }}</a>
+    <span class="date">{{ post.date | date: "%B %-d, %Y"  }}</span>
+  </li>
+  {% endif %}
+{% endfor %}
+</ul>
+{% endfor %}
+
+<h3>experiment</h3>
+<div class="tags-expo">
+  <div class="tags-expo-list">
+    {% for tag in site.tags %}
+    <a href="#{{ tag[0] | slugify }}" class="post-tag">{{ tag[0] }}</a>
+    {% endfor %}
+  </div>
+  <hr/>
+
+  
+  <div>
+    <h3>Step 01</h3>
+    {% capture site_tags %}
+      {% for tag in site.tags %}
+        {{ tag | first }}{% unless forloop.last %},{% endunless %}
+      {% endfor %}
+    {% endcapture %}
+    {% assign tags_list = site_tags | split:',' | sort_natural %}
+
+    <h3>Step 02</h3>
+    <ul>
+      {% for item in (0..site.tags.size) %}{% unless forloop.last %}
+        {% capture this_word %}{{ tags_list[item] | strip_newlines }}{% endcapture %}
+        <li><a href="#{{ this_word}}" class="tag"><span class="tag-name">{{ this_word }}</span> <span class="count">{{ site.tags[this_word].size }}</span></a></li>
+      {% endunless %}{% endfor %}
+    </ul>
+    
+    <h3>Step 03</h3>
+    {% for item in (0..site.tags.size) %}{% unless forloop.last %}
+    {% capture this_word %}{{ tags_list[item] | strip_newlines }}{% endcapture %}
+      <article id="{{ this_word }}">
+      <h2 class="tag-heading tag-name">{{ this_word }}</h2>
+          <ul>
+      {% for post in site.tags[this_word] %}{% if post.title != null %}
+        <li><a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}" >{{ post.date | date: '%m/%d/%Y' }} ---- {{ post.title }}</a></li>
+      {% endif %}{% endfor %}
+          </ul>
+      </article>
+    {% endunless %}{% endfor %}    
+
+  </div>
+
+</div>
