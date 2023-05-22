@@ -13,10 +13,16 @@ layout: base
 
 {{ content }}
 
-<h4>Limit the list length:</h4>
+<h3>Latest Blogs:</h3>
 {% for collection in site.collections %}
     {% for item in site[collection.label] limit:2 %}
             - <a href="{{ item.url }}">{{ item.title }}</a> <br>
     {% endfor %}
     <br class="py-3">
 {% endfor %}
+
+<h3>Quick code to get list of posts</h3>
+{% for post in site.posts %}
+    * <a href="{{ post.url }}">{{ post.title }}</a> <br>
+{% endfor %}
+<br class="py-3">
