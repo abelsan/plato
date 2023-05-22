@@ -22,7 +22,7 @@ layout: base
 {% endfor %}
 
 <h3>Quick code to get list of posts</h3>
-{% for post in site.posts %}
+{% for post in site.posts limit:3 %}
     * <a href="{{ post.url }}">{{ post.title }}</a> <br>
 {% endfor %}
 <br class="py-3">
