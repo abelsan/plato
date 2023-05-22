@@ -10,9 +10,3 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 Link to [list of blog posts and tags](blogs_and_tags.html).
 Link to [blog](blog).
-
-<h4>Limit the list length:</h4>
-{% for item in site[collection.label] limit:2 %}
-        - <a href="{{ item.url }}">{{ item.title }}</a> <br>
-{% endfor %}
-<br class="py-3">
